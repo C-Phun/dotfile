@@ -1,0 +1,26 @@
+git:
+  pagers:
+    - externalDiffCommand: "$LOCALAPPDATA/lazygit/lazygit-pager.ps1"
+
+gui:
+ # Use the mocha catppuccin theme
+ theme:
+   activeBorderColor:
+     - '#EA6962'
+     - bold
+   inactiveBorderColor:
+     - '#7C6F64'
+   optionsTextColor:
+     - '#E78A4E'
+   # selectedLineBgColor:
+   #   - '#313244'
+   # cherryPickedCommitBgColor:
+   #   - '#45475a'
+   # cherryPickedCommitFgColor:
+   #   - '#89b4fa'
+   unstagedChangesColor:
+     - '#D8A657'
+   defaultFgColor:
+     - '#DDC7A1'
+   # searchingActiveBorderColor:
+   #   - '#f9e2af'

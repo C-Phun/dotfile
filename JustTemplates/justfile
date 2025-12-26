@@ -1,0 +1,20 @@
+set windows-shell := [ "bash.exe", "-c" ]
+
+config:="Release"
+
+all: run
+
+configure:
+  rm -f **/*.sln
+  rm -f  **/*.slnx
+
+  dotnet new sln --force
+  dotnet sln add $(fd -I -e "csproj") 
+  dotnet restore
+
+build: 
+  dotnet build ./ConsoleSimulator/ -c "{{config}}"
+
+run: build
+  ./ConsoleSimulator/bin/{{config}}/net10.0/Contact.ConsoleSimulator.exe
+

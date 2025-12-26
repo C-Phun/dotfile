@@ -1,0 +1,25 @@
+links:
+  - source: "Windows/powershell"
+    target_dir: "$USERPROFILE/Documents"
+    rename: "PowerShell"
+  - source: "Windows/powershell"
+    target_dir: "$USERPROFILE/Documents"
+    rename: "WindowsPowerShell"
+  - source: "Windows/clink"
+    target_dir: "$LOCALAPPDATA"
+  # Tools
+  - source: "Common/nvim"
+    target_dir: "$XDG_CONFIG_HOME"
+  - source: "Common/nvim"
+    target_dir: "$LOCALAPPDATA"
+  - source: "Common/lazygit"
+    target_dir: "$XDG_CONFIG_HOME"
+  - source: "Common/lazygit"
+    target_dir: "$LOCALAPPDATA"
+  # Desktop
+  - source: "Common/wezterm"
+    target_dir: "$XDG_CONFIG_HOME"
+  # Others
+  - source: "Windows/WindowsTerminal"
+    target_dir: "$LOCALAPPDATA/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe"
+    rename: "LocalState"

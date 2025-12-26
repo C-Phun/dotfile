@@ -1,0 +1,22 @@
+
+-- local os = vim.loop.os_uname().sysname
+--
+-- if os:find 'MINGW' then
+--   vim.o.shellcmdflag = '-c'
+-- else
+--   if os:find 'Windows' then
+--     -- if true then
+--     --   vim.o.shell = vim.env.SHELL
+--     --   vim.o.shellcmdflag = '-c'
+--     -- else -- For powershell
+--       -- vim.o.shell = vim.fn.executable 'pwsh' == 1 and 'pwsh' or 'powershell'
+--     vim.o.shell = 'powershell'
+--       vim.o.shellcmdflag =
+--         '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8'
+--       vim.o.shellredir = '-RedirectStandardOutput %s -NoNewWindow -Wait'
+--       vim.o.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+--       vim.o.shellquote = ''
+--       vim.o.shellxquote = ''
+--     -- end
+--   end
+-- end

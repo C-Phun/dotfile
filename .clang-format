@@ -1,0 +1,7 @@
+---
+# Language: Cpp
+BasedOnStyle: Microsoft
+
+AlignArrayOfStructures: Right
+AlignConsecutiveAssignments: true
+...
