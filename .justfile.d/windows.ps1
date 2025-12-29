@@ -42,21 +42,21 @@ if (-not (Get-Command scoop -ErrorAction SilentlyContinue) ) {
 #================
 $EnvVars = [ordered]@{
   # Sensible XDG Specifications
-  "HOME" = "$env:USERPROFILE"
-  "XDG_CONFIG_HOME" = "$env:HOME\.config"
-  "XDG_CACHE_HOME" = "$env:HOME\.cache"
-  "XDG_BIN_HOME" = "$env:HOME\.local\bin"
-  "XDG_DATA_HOME" = "$env:HOME\.local\share"
-  "XDG_STATE_HOME" = "$env:HOME\.local\state"
+  # "HOME" = "$env:USERPROFILE"
+  # "XDG_CONFIG_HOME" = "$env:HOME\.config"
+  # "XDG_CACHE_HOME" = "$env:HOME\.cache"
+  # "XDG_BIN_HOME" = "$env:HOME\.local\bin"
+  # "XDG_DATA_HOME" = "$env:HOME\.local\share"
+  # "XDG_STATE_HOME" = "$env:HOME\.local\state"
   # Config Dirs using XDG
-  "KOMOREBI_CONFIG_HOME" = "$env:XDG_CONFIG_HOME\komorebi"
-  "BAT_CONFIG_DIR" = "$env:XDG_CONFIG_HOME\bat"
-  # Declutter Home
-  "DOTNET_CLI_HOME" = "$env:XDG_DATA_HOME\dotnet"
-  "NUGET_PACKAGES" = "$env:XDG_DATA_HOME\nuget\packages"
-  "RUSTUP_HOME" = "$env:XDG_DATA_HOME\rustup"
-  "CARGO_HOME" = "$env:XDG_DATA_HOME\cargo"
-  "ANDROID_USER_HOME" = "$env:XDG_DATA_HOME\android"
+  # "KOMOREBI_CONFIG_HOME" = "$env:XDG_CONFIG_HOME\komorebi"
+  # "BAT_CONFIG_DIR" = "$env:XDG_CONFIG_HOME\bat"
+  # # Declutter Home
+  # "DOTNET_CLI_HOME" = "$env:XDG_DATA_HOME\dotnet"
+  # "NUGET_PACKAGES" = "$env:XDG_DATA_HOME\nuget\packages"
+  # "RUSTUP_HOME" = "$env:XDG_DATA_HOME\rustup"
+  # "CARGO_HOME" = "$env:XDG_DATA_HOME\cargo"
+  # "ANDROID_USER_HOME" = "$env:XDG_DATA_HOME\android"
   # Fuck Microsoft
   "DOTNET_CLI_TELEMETRY_OPTOUT" = "1"
   "POWERSHELL_TELEMETRY_OPTOUT" = "1"

@@ -1,7 +1,3 @@
-git:
-  pagers:
-    - externalDiffCommand: "$LOCALAPPDATA/lazygit/lazygit-pager.ps1"
-
 gui:
  # Use the mocha catppuccin theme
  theme:

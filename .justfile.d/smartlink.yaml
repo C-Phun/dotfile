@@ -9,16 +9,16 @@ links:
     target_dir: "$LOCALAPPDATA"
   # Tools
   - source: "Common/nvim"
-    target_dir: "$XDG_CONFIG_HOME"
+    target_dir: "$USERPROFILE/.config"
   - source: "Common/nvim"
     target_dir: "$LOCALAPPDATA"
   - source: "Common/lazygit"
-    target_dir: "$XDG_CONFIG_HOME"
+    target_dir: "$USERPROFILE/.config"
   - source: "Common/lazygit"
     target_dir: "$LOCALAPPDATA"
   # Desktop
   - source: "Common/wezterm"
-    target_dir: "$XDG_CONFIG_HOME"
+    target_dir: "$USERPROFILE/.config"
   # Others
   - source: "Windows/WindowsTerminal"
     target_dir: "$LOCALAPPDATA/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe"
