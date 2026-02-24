@@ -24,11 +24,11 @@ module.keys = {
     mods = 'LEADER',
     action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
   },
-  -- {
-  --   key = 'c',
-  --   mods = 'LEADER',
-  --   action = wezterm.action.ShowLauncher,
-  -- },
+  {
+    key = 'Enter',
+    mods = 'ALT',
+    action = wezterm.action.ToggleFullScreen,
+  },
   {
     key = 'c',
     mods = 'LEADER',
@@ -58,6 +58,11 @@ module.keys = {
     key = '-',
     mods = 'CTRL',
     action = wezterm.action.DecreaseFontSize,
+  },
+  {
+      key = 't',
+      mods = 'LEADER',
+      action = wezterm.action.TogglePaneZoomState,
   },
 }
 

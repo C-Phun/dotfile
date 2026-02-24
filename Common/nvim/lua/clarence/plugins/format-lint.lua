@@ -30,7 +30,7 @@ return {
       notify_on_error = true,
       formatters_by_ft = {
         cpp = { 'clang-format' },
-        cs = { 'csharpier', 'clang-format' },
+        cs = { 'clang-format' },
         nix = { 'nixfmt' },
         yaml = { 'prettierd' },
         html = { 'prettierd' },

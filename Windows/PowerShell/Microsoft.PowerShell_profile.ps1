@@ -39,10 +39,6 @@ if (Get-Command -Name "eza" -ErrorAction SilentlyContinue) {
   }
   Set-Alias -Name ls -Value def_eza -Force -Option AllScope
 }
-if (Get-Command -Name "zoxide" -ErrorAction SilentlyContinue) {
-  Invoke-Expression (& { (zoxide init powershell | Out-String) })
-  Set-Alias -Name cd -Value z -Force -Option AllScope
-}
 if (Get-Command -Name "starship" -ErrorAction SilentlyContinue) {
   Invoke-Expression (&starship init powershell)
 }
@@ -79,3 +75,12 @@ if (Get-Module -Name PSReadLine -ListAvailable) {
   Set-PSReadLineOption -ViModeIndicator Cursor
 }
 
+if (Get-Command -Name "zoxide" -ErrorAction SilentlyContinue) {
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
+}
+if (Get-Alias cd -ErrorAction SilentlyContinue) {
+    Remove-Item alias:cd
+}
+function cd {
+    z @args
+}
