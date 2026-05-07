@@ -12,8 +12,9 @@ return {
       require('nvim-treesitter.configs').setup {
         sync_install = false,
         auto_install = true,
-        ensure_installed = { 
-        "c_sharp",},
+        ensure_installed = {
+          'c_sharp',
+        },
 
         indent = {
           enable = false,
@@ -26,6 +27,19 @@ return {
           },
         },
       }
+      -- vim.treesitter.query.set(
+      --   'c_sharp',
+      --   'injections',
+      --   [[
+      --   ((comment) @injection.content
+      --     (#match? @injection.content "^///")
+      --     (#set! injection.language "xml"))
+      --
+      --   ((comment) @injection.content
+      --     (#match? @injection.content "^/\\*\\*")
+      --     (#set! injection.language "xml"))
+      --   ]]
+      -- )
     end,
   },
   {

@@ -23,48 +23,85 @@ return {
     require('mini.visits').setup()
     require('mini.pairs').setup()
     require('mini.cursorword').setup()
-    require('mini.map').setup {
-      -- Highlight integrations (none by default)
-      integrations = nil,
-
-      -- Symbols used to display data
-      symbols = {
-        -- Encode symbols. See `:h MiniMap.config` for specification and
-        -- `:h MiniMap.gen_encode_symbols` for pre-built ones.
-        -- Default: solid blocks with 3x2 resolution.
-        encode = nil,
-
-        -- Scrollbar parts for view and line. Use empty string to disable any.
-        scroll_line = '▶',
-        scroll_view = '╎',
-      },
-
-      -- Window options
-      window = {
-        -- Whether window is focusable in normal way (with `wincmd` or mouse)
-        focusable = false,
-
-        -- Side to stick ('left' or 'right')
-        side = 'right',
-
-        -- Whether to show count of multiple integration highlights
-        show_integration_count = true,
-
-        -- Total width
-        width = 10,
-
-        -- Value of 'winblend' option
-        winblend = 25,
-
-        -- Z-index
-        zindex = 10,
-      },
-    }
-    MiniMap.toggle()
-    vim.keymap.set('n', '<Leader>mt', MiniMap.toggle)
-    vim.keymap.set('n', '<Leader>mr', MiniMap.refresh)
+    -- require('mini.map').setup {
+    --   -- Highlight integrations (none by default)
+    --   integrations = nil,
+    --
+    --   -- Symbols used to display data
+    --   symbols = {
+    --     -- Encode symbols. See `:h MiniMap.config` for specification and
+    --     -- `:h MiniMap.gen_encode_symbols` for pre-built ones.
+    --     -- Default: solid blocks with 3x2 resolution.
+    --     encode = nil,
+    --
+    --     -- Scrollbar parts for view and line. Use empty string to disable any.
+    --     scroll_line = '▶',
+    --     scroll_view = '╎',
+    --   },
+    --
+    --   -- Window options
+    --   window = {
+    --     -- Whether window is focusable in normal way (with `wincmd` or mouse)
+    --     focusable = false,
+    --
+    --     -- Side to stick ('left' or 'right')
+    --     side = 'right',
+    --
+    --     -- Whether to show count of multiple integration highlights
+    --     show_integration_count = true,
+    --
+    --     -- Total width
+    --     width = 10,
+    --
+    --     -- Value of 'winblend' option
+    --     winblend = 25,
+    --
+    --     -- Z-index
+    --     zindex = 10,
+    --   },
+    -- }
+    -- MiniMap.toggle()
+    -- vim.keymap.set('n', '<Leader>mt', MiniMap.toggle)
+    -- vim.keymap.set('n', '<Leader>mr', MiniMap.refresh)
     -- require('mini.animate').setup()
 
+    require('mini.splitjoin').setup -- No need to copy this inside `setup()`. Will be used automatically.
+      {
+        -- Module mappings. Use `''` (empty string) to disable one.
+        -- Created for both Normal and Visual modes.
+        mappings = {
+          toggle = 'ss',
+          split = '',
+          join = '',
+        },
+
+        -- Detection options: where split/join should be done
+        detect = {
+          -- Array of Lua patterns to detect region with arguments.
+          -- Default: { '%b()', '%b[]', '%b{}' }
+          brackets = nil,
+
+          -- String Lua pattern defining argument separator
+          separator = ',',
+
+          -- Array of Lua patterns for sub-regions to exclude separators from.
+          -- Enables correct detection in presence of nested brackets and quotes.
+          -- Default: { '%b()', '%b[]', '%b{}', '%b""', "%b''" }
+          exclude_regions = nil,
+        },
+
+        -- Split options
+        split = {
+          hooks_pre = {},
+          hooks_post = {},
+        },
+
+        -- Join options
+        join = {
+          hooks_pre = {},
+          hooks_post = {},
+        },
+      }
     --------------
     -- MiniIcons
     --------------

@@ -37,6 +37,9 @@ vim.keymap.set({ 'n', 'v', 'x' }, 'Y', '"+y')
 vim.keymap.set({ 'n', 'v' }, 'P', '"+p')
 vim.keymap.set({'n', 'v'},'<leader>rr', vim.lsp.buf.rename)
 
+-- Toggle scrollbind in all windows and sync them
+vim.keymap.set('n', '<leader>sb', ':windo set scb!<cr>:syncbind<cr>', { silent = true, desc = 'Toggle scrollbind' })
+
 -- vim.g.VM_default_mappings   = 0
 
 vim.keymap.set('n', '<C-q>', function()

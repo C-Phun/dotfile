@@ -33,3 +33,17 @@ function moveToFront(bufnr, in_pane)
   end
 end
 
+vim.api.nvim_create_autocmd({"VimEnter"}, {
+    callback = function(event)
+        local title = string.format("%s", vim.fs.basename(vim.fn.getcwd()))
+        vim.fn.system({"wezterm", "cli", "set-tab-title", title})
+    end,
+})
+
+vim.api.nvim_create_autocmd({"VimLeave"}, {                       
+    callback = function()                                  
+        -- Setting title to empty string causes wezterm to revert to its
+        -- default behavior of setting the tab title automatically       
+        vim.fn.system({"wezterm", "cli", "set-tab-title", ""})
+    end,                                                          
+})     
