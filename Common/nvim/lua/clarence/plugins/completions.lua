@@ -4,6 +4,7 @@ return {
   },
   { -- Autocompletion
     'saghen/blink.cmp',
+    version = '1.*',
     cond = not vim.g.vscode,
     event = 'VimEnter',
     dependencies = {
