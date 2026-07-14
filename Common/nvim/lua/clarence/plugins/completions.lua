@@ -49,12 +49,7 @@ return {
     opts = {
       keymap = {
         preset = 'enter',
-        ['<Esc>'] = {
-          function(cmp)
-            cmp.cancel()
-            vim.cmd 'stopinsert'
-          end,
-        },
+        ['<Esc>'] = { 'cancel', 'fallback' },
       },
 
       completion = {
